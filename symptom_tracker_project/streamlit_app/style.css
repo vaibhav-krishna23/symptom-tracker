@@ -1,0 +1,193 @@
+/* Daily Symptom Tracker - Professional Styling */
+/* Value Health Inc. Brand Colors */
+
+:root {
+    --primary-blue: #1f4e79;
+    --secondary-blue: #2d5aa0;
+    --accent-blue: #4a90e2;
+    --light-blue: #b8d4f0;
+    --text-primary: #1f4e79;
+    --text-secondary: #5a6c7d;
+    --text-muted: #8fa8b8;
+    --success-green: #28a745;
+    --warning-yellow: #ffc107;
+    --danger-red: #dc3545;
+    --background-light: #f8fbff;
+    --background-gradient: linear-gradient(135deg, #f8fbff 0%, #e8f4f8 100%);
+}
+
+/* Main App Styling */
+.main .block-container {
+    padding-top: 2rem;
+    max-width: 1200px;
+}
+
+/* Sidebar Styling */
+.sidebar .sidebar-content {
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: white;
+}
+
+.sidebar .sidebar-content .block-container {
+    padding-top: 1rem;
+}
+
+/* Headers and Typography */
+.main-header, .logger-header, .dashboard-header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tagline, .logger-subtitle, .dashboard-subtitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.company {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Styling */
+.form-container {
+    background: var(--background-gradient);
+    border: 1px solid #d1e7dd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Button Styling */
+.stButton > button {
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--accent-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Section Headers */
+.section-header {
+    background: var(--background-gradient);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Cards and Containers */
+.session-card {
+    background: var(--background-gradient);
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-blue);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.session-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Severity Indicators */
+.severity-high { 
+    border-left-color: var(--danger-red) !important; 
+}
+
+.severity-medium { 
+    border-left-color: var(--warning-yellow) !important; 
+}
+
+.severity-low { 
+    border-left-color: var(--success-green) !important; 
+}
+
+/* Input Fields */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div > select {
+    border-radius: 8px;
+    border: 2px solid #e1e8ed;
+    transition: border-color 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus,
+.stSelectbox > div > div > select:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Metrics and Stats */
+.metric-container {
+    background: var(--background-gradient);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e1e8ed;
+}
+
+/* Alert Styling */
+.stAlert {
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.stAlert[data-baseweb="notification"] {
+    background: var(--background-light);
+}
+
+/* Navigation Radio Buttons */
+.stRadio > div {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.stRadio > div > label {
+    color: white !important;
+    font-weight: 500;
+}
+
+/* Sidebar Title Styling */
+.sidebar-title {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.sidebar-tagline {
+    opacity: 0.8;
+}
+
+/* Loading Spinner */
+.stSpinner > div {
+    border-top-color: var(--accent-blue) !important;
+}
+
+/* Success/Error Messages */
+.stSuccess {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left-color: var(--success-green);
+}
+
+.stError {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left-color: var(--danger-red);
+}
+
+.stWarning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left-color: var(--warning-yellow);
+}
+
+.stInfo {
+    background-color: rgba(74, 144, 226, 0.1);
+    border-left-color: var(--accent-blue);
+}
