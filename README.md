@@ -1,6 +1,8 @@
-# 🏥 Symptom Tracker - AI-Powered Healthcare Monitoring System
+# 🏥 Symptom Tracker v2.0 - MCP + LangGraph
 
-A comprehensive health monitoring application with AI-powered symptom analysis, automatic appointment booking, and real-time email notifications.
+AI-powered healthcare monitoring with **real Model Context Protocol (MCP)** and **LangGraph workflow orchestration**.
+
+**New Architecture**: FastMCP + LangGraph + Google Gemini AI
 
 ## 🌟 Features
 
@@ -40,75 +42,54 @@ A comprehensive health monitoring application with AI-powered symptom analysis, 
 
 ### Prerequisites
 - Python 3.11+
-- PostgreSQL database
+- SQLite (included) or PostgreSQL
 - Gmail account with app password
 - Google Gemini API key
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/vaibhav-krishna23/symptom-tracker.git
-   cd symptom-tracker
-   ```
+```bash
+# Clone repository
+git clone https://github.com/vaibhav-krishna23/symptom-tracker.git
+cd symptom-tracker/symptom_tracker_project
 
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+# Create virtual environment
+python -m venv venv
+venv\Scripts\activate  # Windows
 
-3. **Install dependencies**
-   ```bash
-   pip install fastapi uvicorn streamlit sqlalchemy psycopg2-binary redis python-jose cryptography google-generativeai pydantic-settings requests
-   ```
+# Install dependencies
+cd mcp_langgraph_app
+pip install -r requirements.txt
 
-4. **Configure environment variables**
-   Create a `.env` file in `symptom_tracker_project/` directory:
-   ```env
-   # Database
-   DATABASE_URL=your_postgresql_url
-   REDIS_URL=your_redis_url
-   
-   # Security
-   FERNET_KEY=your_fernet_key
-   JWT_SECRET_KEY=your_jwt_secret
-   JWT_ALGORITHM=HS256
-   ACCESS_TOKEN_EXPIRE_MINUTES=1440
-   
-   # AI
-   GEMINI_API_KEY=your_gemini_api_key
-   GEMINI_MODEL=gemini-2.5-flash
-   
-   # Email
-   SMTP_HOST=smtp.gmail.com
-   SMTP_PORT=587
-   SMTP_USER=your_email@gmail.com
-   SMTP_PASS=your_app_password
-   
-   # App
-   ENV=development
-   API_BASE=http://localhost:8000
-   ```
+# Configure .env file
+cp .env.example .env
+# Edit .env with your credentials
 
-5. **Run the application**
-   
-   **Start FastAPI backend:**
-   ```bash
-   cd symptom_tracker_project
-   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-   ```
-   
-   **Start Streamlit frontend (new terminal):**
-   ```bash
-   cd symptom_tracker_project
-   streamlit run streamlit_app/app.py
-   ```
+# Add sample doctor
+python add_doctor.py
+```
 
-6. **Access the application**
-   - Frontend: http://localhost:8501
-   - Backend API: http://localhost:8000
-   - API Documentation: http://localhost:8000/docs
+### Run Application (3 Terminals)
+
+**Terminal 1: MCP Server**
+```bash
+cd mcp_langgraph_app
+python run_mcp_server.py
+```
+
+**Terminal 2: FastAPI Backend**
+```bash
+cd mcp_langgraph_app
+uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+**Terminal 3: Streamlit Frontend**
+```bash
+cd mcp_langgraph_app
+streamlit run streamlit_app/app_v2.py
+```
+
+**Access**: http://localhost:8501
 
 ## 📋 Usage
 
@@ -197,7 +178,13 @@ Automated email notifications include:
 
 ## 🏷️ Version
 
-**v1.0-stable** - Stable working version before MCP implementation
+**v2.0.0** - MCP + LangGraph Architecture
+
+**Key Changes**:
+- ✅ Real FastMCP with 7 tools
+- ✅ LangGraph 8-node workflow
+- ✅ SQLite support for local development
+- ✅ Simplified architecture
 
 ## 👥 Contributing
 

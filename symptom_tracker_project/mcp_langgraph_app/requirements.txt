@@ -1,0 +1,44 @@
+# Core FastAPI and Database
+fastapi
+uvicorn[standard]
+sqlalchemy==1.4.49
+psycopg2-binary
+python-dotenv
+pydantic
+pydantic-settings
+cryptography
+redis
+requests
+
+# Authentication
+python-jose[cryptography]
+passlib[bcrypt]
+email-validator
+
+# AI and LLM
+google-generativeai
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-google-genai>=0.0.11
+langchain-community>=0.0.20
+langgraph
+langgraph-checkpoint-sqlite
+pydantic>=2.0.0
+
+# MCP
+mcp
+fastmcp
+
+# Email
+aiosmtplib
+
+# Streamlit
+streamlit
+pandas
+SpeechRecognition
+PyAudio
+
+# Utilities
+httpx
+aiofiles
+python-multipart
