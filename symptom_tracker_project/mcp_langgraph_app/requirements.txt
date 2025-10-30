@@ -35,6 +35,7 @@ aiosmtplib
 # Streamlit
 streamlit
 pandas
+SpeechRecognition
 
 # Utilities
 httpx
